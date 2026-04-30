@@ -230,7 +230,7 @@ async function createPix() {
   submit.textContent = "Gerando Pix...";
 
   try {
-    const response = await fetch("pix-proxy.php", {
+    const response = await fetch("api/pix-proxy", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload)
@@ -304,7 +304,7 @@ function startStatusPolling() {
 
   async function check() {
     try {
-      const response = await fetch(`pix-proxy.php?action=check_status&hash=${encodeURIComponent(state.pixHash)}`);
+      const response = await fetch(`api/pix-proxy?action=check_status&hash=${encodeURIComponent(state.pixHash)}`);
       const data = await response.json();
       const status = data.payment_status || data.status || "";
       if (status === "paid" || status === "approved") {
