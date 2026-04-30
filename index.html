@@ -15,6 +15,7 @@
 </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="assets/Produtos/imagemprincipal.webp">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -42,14 +43,15 @@
         <div class="gallery-wrapper">
           <div class="gallery-badge-top">OFERTA POR TEMPO LIMITADO</div>
           <div class="main-image-wrap">
-            <img id="mainImage" src="assets/Produtos/imagemprincipal.webp" alt="Sapatilha Ortopédica em várias cores" class="main-image">
+            <link rel="preload" as="image" href="assets/Produtos/imagemprincipal.webp">
+            <img id="mainImage" src="assets/Produtos/imagemprincipal.webp" alt="Sapatilha Ortopédica em várias cores" class="main-image" width="500" height="500" priority>
           </div>
           <div class="thumbs" aria-label="Galeria do produto">
-            <button class="thumb active" type="button" data-image="assets/Produtos/imagemprincipal.webp"><img src="assets/Produtos/imagemprincipal.webp" alt="Cores disponíveis"></button>
-            <button class="thumb" type="button" data-image="assets/Produtos/rose.webp"><img src="assets/Produtos/rose.webp" alt="Sapatilha cor rose"></button>
-            <button class="thumb" type="button" data-image="assets/Produtos/cinza1.webp"><img src="assets/Produtos/cinza1.webp" alt="Sapatilha cor cinza"></button>
-            <button class="thumb" type="button" data-image="assets/Produtos/preto1.webp"><img src="assets/Produtos/preto1.webp" alt="Sapatilha cor preto"></button>
-            <button class="thumb" type="button" data-image="assets/Produtos/azulmarinho.webp"><img src="assets/Produtos/azulmarinho.webp" alt="Sapatilha cor azul marinho"></button>
+            <button class="thumb active" type="button" data-image="assets/Produtos/imagemprincipal.webp"><img src="assets/Produtos/imagemprincipal.webp" alt="Cores disponíveis" width="100" height="100"></button>
+            <button class="thumb" type="button" data-image="assets/Produtos/rose.webp"><img src="assets/Produtos/rose.webp" alt="Sapatilha cor rose" width="100" height="100"></button>
+            <button class="thumb" type="button" data-image="assets/Produtos/cinza1.webp"><img src="assets/Produtos/cinza1.webp" alt="Sapatilha cor cinza" width="100" height="100"></button>
+            <button class="thumb" type="button" data-image="assets/Produtos/preto1.webp"><img src="assets/Produtos/preto1.webp" alt="Sapatilha cor preto" width="100" height="100"></button>
+            <button class="thumb" type="button" data-image="assets/Produtos/azulmarinho.webp"><img src="assets/Produtos/azulmarinho.webp" alt="Sapatilha cor azul marinho" width="100" height="100"></button>
           </div>
         </div>
       </div>
@@ -136,7 +138,7 @@
     <section class="content-section card-section">
       <div class="card-box">
         <h2 class="card-heading">Por que milhares de mulheres escolhem a CURALIV</h2>
-        <img src="assets/Produtos/azulmarinho2.webp" alt="Detalhe da Sapatilha Ortopédica" class="card-image">
+        <img src="assets/Produtos/azulmarinho2.webp" alt="Detalhe da Sapatilha Ortopédica" class="card-image" loading="lazy" width="600" height="400">
         
         <ul class="feature-checklist">
           <li>
@@ -248,10 +250,10 @@
       <div class="card-box">
         <h2 class="card-heading-center">Veja quem também já aprovou</h2>
         <div class="media-grid">
-          <img src="assets/Feedbacks/br-11134103-820mf-mmnakouzlgxydc.webp" alt="Feedback de cliente">
-          <img src="assets/Feedbacks/br-11134103-820lp-mmrbmpq413i964.webp" alt="Foto de avaliação">
-          <img src="assets/Feedbacks/br-11134103-81zte-mkqvvlxkjzsx10.webp" alt="Cliente mostrando a sapatilha">
-          <video src="assets/Feedbacks/br-11110103-6v65f-mgkz2qotpo9121.16000051762095803.mp4" controls playsinline preload="metadata" poster="assets/Feedbacks/videoframe_1619.png"></video>
+          <img src="assets/Feedbacks/br-11134103-820mf-mmnakouzlgxydc.webp" alt="Feedback de cliente" loading="lazy" width="300" height="345">
+          <img src="assets/Feedbacks/br-11134103-820lp-mmrbmpq413i964.webp" alt="Foto de avaliação" loading="lazy" width="300" height="345">
+          <img src="assets/Feedbacks/br-11134103-81zte-mkqvvlxkjzsx10.webp" alt="Cliente mostrando a sapatilha" loading="lazy" width="300" height="345">
+          <video src="assets/Feedbacks/br-11110103-6v65f-mgkz2qotpo9121.16000051762095803.mp4" controls playsinline preload="none" poster="assets/Feedbacks/videoframe_1619.png" width="300" height="345"></video>
         </div>
       </div>
     </section>
@@ -352,6 +354,9 @@
           <div class="order-summary" id="orderSummary"></div>
           <button type="submit" class="buy-button">Gerar Pix</button>
           <div class="pix-result" id="pixResult" hidden>
+            <div class="pix-warning-box">
+              <p>⚠️ <strong>Atenção:</strong> seu banco pode mostrar um alerta automático de segurança ao confirmar o Pix. Isso acontece em algumas compras online. Antes de pagar, confira os dados do QR Code e, se estiver tudo certo, pode finalizar normalmente. Seu pedido será confirmado após o pagamento.</p>
+            </div>
             <div id="qrCode" class="qr-code"></div>
             <label>Código Pix copia e cola<textarea id="pixCopy" readonly></textarea></label>
             <button type="button" class="copy-button" id="copyPix">Copiar código Pix</button>

@@ -1008,6 +1008,20 @@ select:focus, input:focus, textarea:focus {
   display: none;
 }
 
+.pix-warning-box {
+  background: #FFF9E6;
+  border: 1px solid #F6D6BD; /* Reutilizando cor que combina com o tema */
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.pix-warning-box p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
 .qr-code {
   width: min(260px, 100%);
   min-height: 260px;

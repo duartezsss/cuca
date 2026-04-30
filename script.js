@@ -329,7 +329,7 @@ function renderTestimonials() {
   const grid = document.querySelector("#testimonialGrid");
   grid.innerHTML = testimonials.map((item, index) => `
     <article class="testimonial-card">
-      <img src="${feedbackImages[index]}" alt="Feedback de ${item[0]}">
+      <img src="${feedbackImages[index]}" alt="Feedback de ${item[0]}" loading="lazy" width="200" height="200">
       <div class="stars">★★★★★</div>
       <p>"${item[2]}"</p>
       <footer>
